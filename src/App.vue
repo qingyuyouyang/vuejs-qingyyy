@@ -1,23 +1,23 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>Welcome to Learnku Vue.js.com</h1>
+  <div id="wrap">
+    <TheHeader/>
   </div>
 </template>
 
 <script>
+import TheHeader from '@/components/layouts/TheHeader'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    TheHeader
+  }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 200px;
-}
+<style lang="scss">
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$fa-font-path: "~font-awesome/fonts/";
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "~font-awesome/scss/font-awesome";
 </style>
