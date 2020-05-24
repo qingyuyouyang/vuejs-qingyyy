@@ -1,0 +1,200 @@
+$test-border:0px solid red;
+
+$font-body:'007号-温暖童稚体';
+@font-face {
+  font-family: $font-body;
+  src: url("./fonts/"+$font-body+".ttf");
+}
+
+$font-motto:'110号-武林江湖体';
+@font-face {
+  font-family: $font-motto;
+  src: url("./fonts/"+$font-motto+".ttf");
+}
+
+$color-title:#636b6f;
+$color-content:#636b6f;
+
+html{
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-body;
+  background: #f0f2f5;
+}
+
+a,a:hover{
+	text-decoration: none;
+}
+
+/*
+* 混合器
+*/
+//显示内容的行数；    要显示几行数字为几即可！
+@mixin text-overflow($line){
+  overflow: hidden;
+  text-overflow:ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+.navbar{
+	border:$test-border;
+	// border-top: 4px solid #00b5ad;
+	height: 3rem;
+	background: rgba(255,255,255,.3);
+	color:#66CCCC;
+
+	a{
+		color:#66cccc;
+	}
+}
+
+.jumbotron{
+	background:url('./images/jumbotron.jpg') center center no-repeat;
+	background-size: 100%;
+	color:#fff;
+	height: 20rem;
+	margin-bottom: 0px;
+
+	.lead{
+		font-size:2rem;
+	}
+
+	img{
+		width:7rem;
+		margin-top: 3rem;
+		border-radius: 50%;
+	}
+}
+
+.motto{
+	height:3rem;
+	text-align: center;
+	background: #fff;
+  color:#f4645f;
+
+  span{
+    font-family: $font-motto;
+    margin-bottom: 0rem;
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+}
+
+
+.c-left{
+	margin-top:1rem;
+	padding:1rem;
+	background-color: #fff;
+
+
+	.l-h2{
+		border-bottom: 1px solid #f2f2f2;
+    color:$color-title;
+	}
+
+	.the-carousel{
+		padding-bottom: 1rem;
+		// border-bottom: 1px solid rgb(219, 224, 226);
+
+		#carouselExampleCaptions{
+			height:20rem;
+
+			.carousel-inner{
+				height:100%!important;
+
+				.carousel-caption{
+					bottom: 20rem;
+				}
+			}
+		}
+	}
+
+	.media{
+    border-top: #66CCCC;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		border-bottom: 1px solid #f2f2f2;
+
+		.media-title{
+			font-weight: bold;
+      color:$color-content;
+		}
+
+		.media-body{
+			@include text-overflow(3);
+			padding-left:1rem;
+			background: #fff;
+      color:$color-content;
+
+			p{
+				margin-bottom: 0px;
+			}
+		}
+
+		img{
+			display: block;
+			height: 6rem;
+			background: #f4f4f4;
+			margin-right: 0px!important;
+			position: relative;
+			border-radius: 3px;
+		}
+	}
+  .page-link{
+      color:$color-content!important;
+  }
+
+}
+.c-right{
+	margin-top: 20px;
+
+	.card-one{
+    margin-bottom:2rem;
+    border-radius:5px;
+    border-top: 2px solid #66CCCC;
+
+    .card-title{
+      color:$color-title;
+    }
+
+    .card-body{
+      color:$color-content;
+    }
+
+    .card-info-icon{
+      color:#99CCCC;
+    }
+    .card-info-text{
+      color:#99CCCC;
+    }
+    .card-info-number{
+      color:#99CCCC;
+      float: right;
+    }
+	}
+
+  .card-two{
+
+    border-radius:5px;
+  }
+}
+
+footer{
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #fff;
+
+    p{
+    	margin-bottom: 0px;
+    }
+}
+
+#article{
+  margin-top: 60px;
+}

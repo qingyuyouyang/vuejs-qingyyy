@@ -18,6 +18,7 @@ export default {
 <style lang="scss">
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 $fa-font-path: "~font-awesome/fonts/";
-@import "~bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "~bootstrap/scss/bootstrap";
 @import "~font-awesome/scss/font-awesome";
+@import "./styles/main";
 </style>
