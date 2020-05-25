@@ -9,7 +9,7 @@
       </div>
     </div>
   </div> -->
-  <nav class="navbar-default navbar fixed-top navbar-expand-lg">
+  <nav class="navbar-default navbar navbar-expand-lg">
    <router-link to="/" class="navbar-brand">
       <i class="fas fa-feather-alt"></i>&nbsp;&nbsp;青羽悠扬
    </router-link>
