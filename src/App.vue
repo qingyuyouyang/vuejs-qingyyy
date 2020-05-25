@@ -1,7 +1,7 @@
 <template>
   <div id="wrap">
     <TheHeader/>
-    <div id="main-container" class="container main-container">
+    <div id="main-container">
       <router-view/>
     </div>
     <TheFooter/>
@@ -28,6 +28,7 @@ export default {
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 $fa-font-path: "~font-awesome/fonts/";
 @import "~bootstrap/scss/bootstrap";
+// @import "~bootstrap/dist/js/bootstrap";
 @import "~font-awesome/scss/font-awesome";
 @import "./styles/main";
 </style>

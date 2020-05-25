@@ -9,7 +9,7 @@
      <br />
      <p>你就像春天的精灵,路过人间时,弥漫芬芳与光亮.</p>
      <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
-     <img src="../images/avatar.jpg" alt="..." class="img-thumbnail" />
+     <img src="@/images/avatar.jpg" alt="..." class="img-thumbnail" />
     </div>
     <div class="motto">
      <span>❤成功源于不懈的努力。</span>
@@ -26,63 +26,49 @@
              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-             <div class="carousel-item active">
-              <img src="../images/article/1.jpg" class="d-block w-100" alt="./images/Article/1.jpg" />
+             <div v-for="(item, index) in carousel" class="carousel-item" :class="{ active: index === activeCarouselIndex }">
+              <img src="@/images/article/1.jpg" class="d-block w-100" alt="./images/Article/1.jpg" />
               <div class="carousel-caption d-none d-md-block">
-               <h5>First slide label</h5>
+               <h5>{{ item.title }}</h5>
                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
               </div>
              </div>
-             <div class="carousel-item">
-              <img src="../images/article/1.jpg" class="d-block w-100" alt="./images/Article/1.jpg" />
-              <div class="carousel-caption d-none d-md-block">
-               <h5>Second slide label</h5>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-             </div>
-             <div class="carousel-item">
-              <img src="../images/article/1.jpg" class="d-block w-100" alt="./images/Article/1.jpg" />
-              <div class="carousel-caption d-none d-md-block">
-               <h5>Third slide label</h5>
-               <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-              </div>
-             </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+            <a class="carousel-control-prev" @click="changeCarouselIndex(1)" href="#carouselExampleCaptions" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
+            <a class="carousel-control-next" @click="changeCarouselIndex(-1)" href="#carouselExampleCaptions" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
            </div>
           </div>
           <h2 class="l-h2">最新文章</h2>
           <div class="media">
-           <a href="#"> <img src="../images/article/1.jpg" class="align-self-start mr-3" alt="..." /> </a>
+           <a href="#"> <img src="@/images/article/1.jpg" class="align-self-start mr-3" alt="..." /> </a>
            <div class="media-body">
             <a href="#"><h5 class="media-title">爱，不止在字里行间</h5></a>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏</p>
            </div>
           </div>
           <div class="media">
-           <img src="../images/article/1.jpg" class="align-self-start mr-3" alt="..." />
+           <img src="@/images/article/1.jpg" class="align-self-start mr-3" alt="..." />
            <div class="media-body">
             <h5 class="mt-0">爱，不止在字里行间</h5>
             <p>那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏</p>
            </div>
           </div>
           <div class="media">
-           <img src="../images/article/1.jpg" class="align-self-start mr-3" alt="..." />
+           <img src="@/images/article/1.jpg" class="align-self-start mr-3" alt="..." />
            <div class="media-body">
             <h5 class="mt-0">爱，不止在字里行间</h5>
             <p>那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏</p>
            </div>
           </div>
           <div class="media">
-           <img src="../images/article/1.jpg" class="align-self-start mr-3" alt="..." />
+           <img src="@/images/article/1.jpg" class="align-self-start mr-3" alt="..." />
            <div class="media-body">
             <h5 class="mt-0">爱，不止在字里行间</h5>
             <p>那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏</p>
            </div>
           </div>
           <div class="media">
-           <img src="../images/article/1.jpg" class="align-self-start mr-3" alt="..." />
+           <img src="@/images/article/1.jpg" class="align-self-start mr-3" alt="..." />
            <div class="media-body">
             <h5 class="mt-0">爱，不止在字里行间</h5>
             <p>那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏</p>
@@ -133,7 +119,7 @@
            </div> -->
           </div>
           <div class="card card-two">
-           <img src="../images/right-avatar.jpg" class="card-img-top" alt="..." />
+           <img src="@/images/right-avatar.jpg" class="card-img-top" alt="..." />
            <div class="card-body">
             <h5 class="card-title">怀念，是你的笑颜</h5>
             <p class="card-text">那些逝去的时光，那些被记忆冲散的岁月，那挂在心头的人儿啊，Are you ok? ^_^.</p>
@@ -163,7 +149,25 @@ export default {
     return {
       msg: '', // 消息
       msgType: '', // 消息类型
-      msgShow: false // 是否显示消息，默认不显示
+      msgShow: false, // 是否显示消息，默认不显示
+    
+      carousel: [
+        {
+          title:'1111111',
+          img:'',
+          src:''
+        },{
+          title:'',
+          img:'',
+          src:''
+        },{
+          title:'33333333',
+          img:'',
+          src:''
+        }
+      ],
+
+      activeCarouselIndex: 0,
     }
   },
   beforeRouteEnter(to, from, next) {
@@ -184,7 +188,12 @@ export default {
       this.msg = msg
       this.msgType = type
       this.msgShow = true
-    }
+    },
+    changeCarouselIndex(index) {
+      index = 1 + index,
+      alert(index)
+      this.activeCarouselIndex = index
+    },
   },
   computed: {
     auth() {

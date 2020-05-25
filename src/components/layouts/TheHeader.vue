@@ -9,9 +9,9 @@
       </div>
     </div>
   </div> -->
-  <nav class="navbar-default navbar navbar-expand-lg">
+  <nav class="navbar-default navbar fixed-top navbar-expand-lg">
    <router-link to="/" class="navbar-brand">
-      <i class="fas fa-feather-alt"></i>&nbsp;&nbsp;青羽悠扬
+      <img :src="logo.src" :alt="logo.title">&nbsp;&nbsp;{{ logo.title }}
    </router-link>
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" @click="toggleNav">
       <span class="navbar-toggler-icon"></span> 
@@ -34,8 +34,8 @@ export default {
   data() {
     return {
       logo: {
-        src: `${this.uploadsUrl}sites/ByvFbNlQYVwhvTyBgLdqitchoacDNznN.jpg`,
-        title: 'Learnku Vue.js'
+        src: `${this.uploadsUrl}`,
+        title: '青羽悠扬'
       },
       navList: ['主页', '心情随笔', '工作笔记'],
       activeNavIndex: 0,
@@ -43,7 +43,7 @@ export default {
     }
   },
   beforeCreate() {
-    this.uploadsUrl = 'https://learnku.com/vuejs/uploads/'
+    this.uploadsUrl = require('@/images/logo.png')
   },
   methods: {
     changeNavIndex(index) {
