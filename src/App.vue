@@ -1,16 +1,25 @@
 <template>
   <div id="wrap">
     <TheHeader/>
+    <div id="main-container" class="container main-container">
+      <router-view/>
+    </div>
+    <TheFooter/>
   </div>
 </template>
 
 <script>
 import TheHeader from '@/components/layouts/TheHeader'
 
+// 引入 TheFooter.vue 的默认值
+import TheFooter from '@/components/layouts/TheFooter'
+
 export default {
   name: 'App',
   components: {
-    TheHeader
+    TheHeader,
+    // 注册 TheFooter
+    TheFooter
   }
 }
 </script>

@@ -183,18 +183,25 @@ a,a:hover{
   }
 }
 
-footer{
-    text-align: center;
+.footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
     margin-top: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: #fff;
-
-    p{
-    	margin-bottom: 0px;
-    }
 }
 
 #article{
   margin-top: 60px;
+}
+
+.popover{
+    position: absolute;
+    border: 1px solid #d4d4d5;
+    text-align: center;
+    background: #000;
+    padding: .833rem 1rem;
+    color: rgba(255,255,255,.87);
 }

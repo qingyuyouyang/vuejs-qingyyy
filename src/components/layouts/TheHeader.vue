@@ -9,14 +9,19 @@
       </div>
     </div>
   </div> -->
-  <nav class="navbar fixed-top navbar-expand-lg">
-   <a class="navbar-brand" href="#"><i class="fas fa-feather-alt"></i>&nbsp;&nbsp;青羽悠扬</a>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-   <div class="collapse navbar-collapse" id="navbarText">
+  <nav class="navbar-default navbar fixed-top navbar-expand-lg">
+   <router-link to="/" class="navbar-brand">
+      <i class="fas fa-feather-alt"></i>&nbsp;&nbsp;青羽悠扬
+   </router-link>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" @click="toggleNav">
+      <span class="navbar-toggler-icon"></span> 
+   </button>
+
+   <div id="navbarText" :class="['collapse', 'navbar-collapse', { show: showCollapsedNav }]">
     <ul class="navbar-nav mr-auto">
-     <li class="nav-item active"> <a class="nav-link" href="#">主页 <span class="sr-only">(current)</span></a> </li>
-     <li class="nav-item"> <a class="nav-link" href="#">心情随笔</a> </li>
-     <li class="nav-item"> <a class="nav-link" href="#">工作笔记</a> </li>
+     <li class="nav-item" v-for="(item, index) in navList" :class="{ active: index === activeNavIndex }">
+       <a class="nav-link" href="#" @click="changeNavIndex(index)">{{ item }} <span class="sr-only">(current)</span></a> 
+     </li>
     </ul>
     <span class="navbar-text"> 回不去的旧日时光 </span>
    </div>
@@ -29,17 +34,29 @@ export default {
   data() {
     return {
       logo: {
-        src: `${this.uploadsUrl}`,
+        src: `${this.uploadsUrl}sites/ByvFbNlQYVwhvTyBgLdqitchoacDNznN.jpg`,
         title: 'Learnku Vue.js'
-      }
+      },
+      navList: ['主页', '心情随笔', '工作笔记'],
+      activeNavIndex: 0,
+      showCollapsedNav: false
     }
   },
   beforeCreate() {
-    this.uploadsUrl = 'http://localhost:8080/'
+    this.uploadsUrl = 'https://learnku.com/vuejs/uploads/'
+  },
+  methods: {
+    changeNavIndex(index) {
+      this.activeNavIndex = index
+    },
+    toggleNav() {
+      this.showCollapsedNav = !this.showCollapsedNav
+    }
   }
 }
 </script>
 
 <style scoped>
-/*.title { display: none;}*/
+.title { display: none;}
+.navbar-default .navbar-nav > .active > a { background: rgba(0,0,0,.08);}
 </style>
