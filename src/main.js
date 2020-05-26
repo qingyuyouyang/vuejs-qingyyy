@@ -7,6 +7,8 @@ import './components'
 import store from './store'
 import VueSweetalert2 from './plugins/vue-sweetalert2'
 import './filters'
+import $ from 'jquery'
+import bootstrap from 'bootstrap'
 
 Vue.use(VueSweetalert2)
 

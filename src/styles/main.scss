@@ -209,3 +209,21 @@ a,a:hover{
     padding: .833rem 1rem;
     color: rgba(255,255,255,.87);
 }
+
+.slide-fade-enter-to {
+  transition: all 100s ease;
+  // transform: translateX(10000);
+}
+
+.slide-fade-leave-active {
+  transition: all 10s ease;
+  transform: translateX(-1000%)
+}
+
+.slide-fade-enter {
+  transform: translateX(100%)
+}
+
+.slide-fade-move {
+  transform: translateX(0)
+}

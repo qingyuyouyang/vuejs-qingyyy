@@ -34,44 +34,16 @@
               </div>
              </div>
             </div>
-            <a class="carousel-control-prev" @click="changeCarouselIndex(1)" href="#carouselExampleCaptions" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
-            <a class="carousel-control-next" @click="changeCarouselIndex(-1)" href="#carouselExampleCaptions" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
            </div>
           </div>
           <h2 class="l-h2">最新文章</h2>
-          <div class="media">
+          <div v-for="(item, index) in media" class="media">
            <a href="#"> <img src="@/images/article/1.jpg" class="align-self-start mr-3" alt="..." /> </a>
            <div class="media-body">
-            <a href="#"><h5 class="media-title">爱，不止在字里行间</h5></a>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏</p>
-           </div>
-          </div>
-          <div class="media">
-           <img src="@/images/article/1.jpg" class="align-self-start mr-3" alt="..." />
-           <div class="media-body">
-            <h5 class="mt-0">爱，不止在字里行间</h5>
-            <p>那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏</p>
-           </div>
-          </div>
-          <div class="media">
-           <img src="@/images/article/1.jpg" class="align-self-start mr-3" alt="..." />
-           <div class="media-body">
-            <h5 class="mt-0">爱，不止在字里行间</h5>
-            <p>那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏</p>
-           </div>
-          </div>
-          <div class="media">
-           <img src="@/images/article/1.jpg" class="align-self-start mr-3" alt="..." />
-           <div class="media-body">
-            <h5 class="mt-0">爱，不止在字里行间</h5>
-            <p>那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏</p>
-           </div>
-          </div>
-          <div class="media">
-           <img src="@/images/article/1.jpg" class="align-self-start mr-3" alt="..." />
-           <div class="media-body">
-            <h5 class="mt-0">爱，不止在字里行间</h5>
-            <p>那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏</p>
+            <a href="#"><h5 class="media-title">{{ item.title }}</h5></a>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.content }}</p>
            </div>
           </div>
           <nav aria-label="Page navigation example">
@@ -153,16 +125,31 @@ export default {
     
       carousel: [
         {
-          title:'1111111',
+          title:'1',
           img:'',
           src:''
         },{
-          title:'',
+          title:'2',
           img:'',
           src:''
         },{
-          title:'33333333',
+          title:'3',
           img:'',
+          src:''
+        }
+      ],
+      media: [
+        {
+          title:'爱，不止在字里行间',
+          content:'那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏',
+          src:''
+        },{
+          title:'爱，不止在字里行间',
+          content:'那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏',
+          src:''
+        },{
+          title:'爱，不止在字里行间',
+          content:'那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏',
           src:''
         }
       ],
