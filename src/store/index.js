@@ -2,7 +2,7 @@
 * @Author: faker
 * @Date:   2020-05-25 15:14:03
 * @Last Modified by:   faker
-* @Last Modified time: 2020-05-25 15:37:15
+* @Last Modified time: 2020-05-26 16:27:31
 */
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -19,6 +19,15 @@ const mutations = {
   UPDATE_USER(state, user) {
     state.user = user
     ls.setItem('user', user)
+  },
+  UPDATE_AUTH(state, auth) {
+    state.auth = auth
+    ls.setItem('auth', auth)
+  },
+  // 更改所有文章的事件类型
+  UPDATE_ARTICLES(state, articles) {
+    state.articles = articles
+    ls.setItem('articles', articles)
   }
 }
 

@@ -27,7 +27,7 @@
             </ol>
             <div class="carousel-inner">
              <div v-for="(item, index) in carousel" class="carousel-item" :class="{ active: index === activeCarouselIndex }">
-              <img src="@/images/article/1.jpg" class="d-block w-100" alt="./images/Article/1.jpg" />
+              <img src="@/images/article/1.jpg" class="d-block w-100" alt="./Fimages/Article/1.jpg" />
               <div class="carousel-caption d-none d-md-block">
                <h5>{{ item.title }}</h5>
                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -39,7 +39,7 @@
            </div>
           </div>
           <h2 class="l-h2">最新文章</h2>
-          <div v-for="(item, index) in media" class="media">
+          <div v-for="(item, index) in articles" class="media">
            <a href="#"> <img src="@/images/article/1.jpg" class="align-self-start mr-3" alt="..." /> </a>
            <div class="media-body">
             <a href="#"><h5 class="media-title">{{ item.title }}</h5></a>
@@ -183,9 +183,9 @@ export default {
     },
   },
   computed: {
-    auth() {
-      return this.$store.state.auth
-    },
+    // auth() {
+    //   return this.$store.state.auth
+    // },
     ...mapState([
       'auth',
       'user',
