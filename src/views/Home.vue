@@ -39,11 +39,11 @@
            </div>
           </div>
           <h2 class="l-h2">最新文章</h2>
-          <div v-for="(item, index) in articles" class="media">
-           <a href="#"> <img src="@/images/article/1.jpg" class="align-self-start mr-3" alt="..." /> </a>
+          <div v-for="(item, index) in postList" class="media">
+           <a href="#"> <img :src="`http://laravel-qingyyy.test/storage/${item.image}`" class="align-self-start mr-3" alt="..." /> </a>
            <div class="media-body">
             <a href="#"><h5 class="media-title">{{ item.title }}</h5></a>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.content }}</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.body }}</p>
            </div>
           </div>
           <nav aria-label="Page navigation example">
@@ -155,6 +155,7 @@ export default {
       ],
 
       activeCarouselIndex: 0,
+      postList: [],
     }
   },
   beforeRouteEnter(to, from, next) {
@@ -170,6 +171,15 @@ export default {
       }
     })
   },
+  // 在实例创建完成后
+  created() {
+    // 通过 axios 执行 GET 请求来返回活跃用户
+    this.$axios.get('http://laravel-qingyyy.test/api/v1/posts').then((response) => {
+      // 在成功的回调里，从 response.data 获取返回数据
+      this.postList = response.data
+      console.log(this.postList)
+    })
+  },
   methods: {
     showMsg(msg, type = 'success') {
       this.msg = msg
@@ -182,16 +192,16 @@ export default {
       this.activeCarouselIndex = index
     },
   },
-  computed: {
-    // auth() {
-    //   return this.$store.state.auth
-    // },
-    ...mapState([
-      'auth',
-      'user',
-      'articles'
-    ])
-  },
+  // computed: {
+  //   // auth() {
+  //   //   return this.$store.state.auth
+  //   // },
+  //   ...mapState([
+  //     'auth',
+  //     'user',
+  //     'articles'
+  //   ])
+  // },
 }
 </script>
 

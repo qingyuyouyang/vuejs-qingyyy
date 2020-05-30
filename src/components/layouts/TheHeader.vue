@@ -20,7 +20,7 @@
    <div id="navbarText" :class="['collapse', 'navbar-collapse', { show: showCollapsedNav }]">
     <ul class="navbar-nav mr-auto">
      <li class="nav-item" v-for="(item, index) in navList" :class="{ active: index === activeNavIndex }">
-       <a class="nav-link" href="#" @click="changeNavIndex(index)">{{ item }} <span class="sr-only">(current)</span></a> 
+       <a class="nav-link" href="#" @click="changeNavIndex(item.href)">{{ item.title }} <span class="sr-only">(current)</span></a> 
      </li>
     </ul>
     <span class="navbar-text"> 回不去的旧日时光 </span>
@@ -37,10 +37,18 @@ export default {
         src: `${this.uploadsUrl}`,
         title: '青羽悠扬'
       },
-      navList: ['主页', '心情随笔', '工作笔记'],
+      navList: [],
       activeNavIndex: 0,
       showCollapsedNav: false
     }
+  },
+  // 在实例创建完成后
+  created() {
+    // 通过 axios 执行 GET 请求来返回活跃用户
+    this.$axios.get('http://laravel-qingyyy.test/api/v1/categories').then((response) => {
+      // 在成功的回调里，从 response.data 获取返回数据
+      this.navList = response.data
+    })
   },
   beforeCreate() {
     this.uploadsUrl = require('@/images/logo.png')
