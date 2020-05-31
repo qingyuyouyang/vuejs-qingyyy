@@ -5,9 +5,9 @@
     <div class="jumbotron">
      <h2 class="l-h2"></h2>
      <!-- <hr class="my-4"> -->
-     <p class="lead">爱你这件事,从一而终,认真且执着</p>
+     <!-- <p class="lead">爱你这件事,从一而终,认真且执着</p> -->
      <br />
-     <p>你就像春天的精灵,路过人间时,弥漫芬芳与光亮.</p>
+     <!-- <p>你就像春天的精灵,路过人间时,弥漫芬芳与光亮.</p> -->
      <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
      <img src="@/images/avatar.jpg" alt="..." class="img-thumbnail" />
     </div>
@@ -60,19 +60,19 @@
           <div class="card card-one">
            <!-- <img src="./images/right-avatar.jpg" class="card-img-top" alt="..." /> -->
            <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-feather-alt"></i>&nbsp;&nbsp;数据信息</h5>
+            <h5 class="card-title"><i class="fas fa-feather-alt"></i>&nbsp;&nbsp;青羽悠扬</h5>
             <p class="card-text">业余的编程爱好者，找寻向往的生活。</p>
            </div>
            <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <i class="card-info-icon fas fa-meteor"></i>&nbsp;
               <span class="card-info-text">访问次数</span>
-              <span class="card-info-number">358745</span>
+              <span class="card-info-number">{{ setting.visited }}</span>
             </li>
             <li class="list-group-item">
               <i class="card-info-icon fas fa-calendar-alt"></i>&nbsp;
               <span class="card-info-text">运行天数</span>
-              <span class="card-info-number">365</span>
+              <span class="card-info-number">{{ setting.run_days }}</span>
             </li>
             <li class="list-group-item">
               <i class="card-info-icon fas fa-file-alt"></i>&nbsp;
@@ -156,6 +156,7 @@ export default {
 
       activeCarouselIndex: 0,
       postList: [],
+      setting: [],
     }
   },
   beforeRouteEnter(to, from, next) {
@@ -177,7 +178,12 @@ export default {
     this.$axios.get('http://laravel-qingyyy.test/api/v1/posts').then((response) => {
       // 在成功的回调里，从 response.data 获取返回数据
       this.postList = response.data
-      console.log(this.postList)
+    }),
+    // 通过 axios 执行 GET 请求来返回活跃用户
+    this.$axios.patch('http://laravel-qingyyy.test/api/v1/setting', { visit:1 }).then((response) => {
+      // 在成功的回调里，从 response.data 获取返回数据
+      this.setting = response.data
+      console.log(this.setting)
     })
   },
   methods: {
