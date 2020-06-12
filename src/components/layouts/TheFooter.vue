@@ -125,7 +125,7 @@ export default {
         list: [
           {
             title: '访问次数',
-            description: '22889'
+            description: '423357',
           },
           {
             title: '文章数',
@@ -151,12 +151,16 @@ export default {
             link: '#'
           }
         ]
-      }
+      },
     }
-  }
+  },
+  beforeCreate() {
+    // 通过 axios 执行 GET 请求来返回活跃用户
+    this.$axios.get('http://laravel-qingyyy.test/api/v1/setting').then((response) => {
+      // 在成功的回调里，从 response.data 获取返回数据
+      this.statistics.list[0].description = response.data.visited
+    })
+  },
 }
-</script>
 
-<style scoped>
-a:hover, a:focus { color: #e27575; transition: color .15s;}
-</style>
+</script>

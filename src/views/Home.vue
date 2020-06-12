@@ -77,7 +77,7 @@
             <li class="list-group-item">
               <i class="card-info-icon fas fa-file-alt"></i>&nbsp;
               <span class="card-info-text">文章数量</span>
-              <span class="card-info-number">28</span>
+              <span class="card-info-number">{{ setting.article_nums }}</span>
             </li>
             <li class="list-group-item">
               <i class="card-info-icon fas fa-comment-dots"></i>&nbsp;
@@ -183,7 +183,6 @@ export default {
     this.$axios.patch('http://laravel-qingyyy.test/api/v1/setting', { visit:1 }).then((response) => {
       // 在成功的回调里，从 response.data 获取返回数据
       this.setting = response.data
-      console.log(this.setting)
     })
   },
   methods: {
