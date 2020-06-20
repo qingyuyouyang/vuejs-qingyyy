@@ -2,7 +2,7 @@
 * @Author: faker
 * @Date:   2020-05-25 14:19:14
 * @Last Modified by:   faker
-* @Last Modified time: 2020-05-26 15:24:29
+* @Last Modified time: 2020-06-20 12:01:12
 */
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -40,18 +40,18 @@ const router = new Router({
 // })
 
 // 注册全局后置钩子
-router.afterEach((to, from) => {
-  const app = router.app
-  const store = app.$options.store
-  const showMsg = to.params.showMsg
+// router.afterEach((to, from) => {
+//   const app = router.app
+//   const store = app.$options.store
+//   const showMsg = to.params.showMsg
 
-  if (showMsg) {
-    if (typeof showMsg === 'string') {
-      app.$message.show(showMsg)
-    } else {
-      app.$message.show('操作成功')
-    }
-  }
-})
+//   if (showMsg) {
+//     if (typeof showMsg === 'string') {
+//       app.$message.show(showMsg)
+//     } else {
+//       app.$message.show('操作成功')
+//     }
+//   }
+// })
 
 export default router

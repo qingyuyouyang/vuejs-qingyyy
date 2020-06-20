@@ -2,7 +2,7 @@
 * @Author: faker
 * @Date:   2020-05-26 15:06:16
 * @Last Modified by:   faker
-* @Last Modified time: 2020-05-26 15:27:31
+* @Last Modified time: 2020-06-20 11:58:36
 */
 export default [
   {
@@ -24,5 +24,11 @@ export default [
     path: '/auth/login',
     name: 'Login',
     // component: () => import('@/views/auth/Login')
+  },
+  // Content
+  {
+    path: '/articles/:articleId/content',
+    name: 'Content',
+    component: () => import('@/views/articles/Content.vue')
   },
 ]
