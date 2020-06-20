@@ -68,16 +68,15 @@ export default {
     }
   },
   created() {
+    const articleId = this.$route.params.articleId
+    const article = this.$store.getters.getArticleById(articleId)
     // 通过 axios 执行 GET 请求来返回活跃用户
-    this.$axios.get('http://laravel-qingyyy.test/api/v1/posts/1').then((response) => {
+    this.$axios.get('http://laravel-qingyyy.test/api/v1/posts/'+articleId).then((response) => {
       // 在成功的回调里，从 response.data 获取返回数据
       this.title = response.data.title
       this.content = response.data.body
       this.date = response.data.created_at
     })
-
-    const articleId = this.$route.params.articleId
-    const article = this.$store.getters.getArticleById(articleId)
 
     if (article) {
       let { title, content, date } = article

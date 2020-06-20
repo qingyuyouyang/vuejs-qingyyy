@@ -42,7 +42,9 @@
           <div v-for="(item, index) in postList" class="media">
            <a href="#"> <img :src="`http://laravel-qingyyy.test/storage/${item.image}`" class="align-self-start mr-3" alt="..." /> </a>
            <div class="media-body">
-            <a href="#"><h5 class="media-title">{{ item.title }}</h5></a>
+            <router-link :to="`/articles/${item.id}/content`" class="media-title hidden-xs">
+              <h5 class="media-title">{{ item.title }}</h5>
+            </router-link>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.body }}</p>
            </div>
           </div>
