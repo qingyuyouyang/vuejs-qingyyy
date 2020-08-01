@@ -27,7 +27,7 @@
             </ol>
             <div class="carousel-inner">
              <div v-for="(item, index) in carousel" class="carousel-item" :class="{ active: index === activeCarouselIndex }">
-              <img src="@/images/article/1.jpg" class="d-block w-100" alt="./Fimages/Article/1.jpg" />
+              <img src="@/images/article/cat 2.jpeg" class="d-block w-100" alt="./Fimages/Article/1.jpg" />
               <div class="carousel-caption d-none d-md-block">
                <h5>{{ item.title }}</h5>
                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
