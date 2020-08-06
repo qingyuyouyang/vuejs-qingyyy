@@ -29,12 +29,16 @@
            </div>
           </div>
           <nav aria-label="Page navigation example">
-           <ul class="pagination justify-content-center">
-            <li class="page-item disabled"> <a class="page-link" href="#" tabindex="-1" aria-disabled="true">上一页</a> </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"> <a class="page-link" href="#">下一页</a> </li>
+           <ul v-if="totalPage > 1" class="pagination justify-content-center">
+            <li :class="{ disabled: internalCurrentPage === 1 }" class="page-item"> 
+              <a class="page-link" href="javascript:;" @click="changePage(internalCurrentPage - 1)">上一页</a> 
+            </li>
+            <li v-for="n in totalPage" :class="{ active: internalCurrentPage === n }" class="page-item">
+              <a class="page-link" href="javascript:;" @click="changePage(n)">{{ n }}</a>
+            </li>
+            <li :class="{ disabled: internalCurrentPage === totalPage }" class="page-item"> 
+              <a class="page-link" href="javascript:;" @click="changePage(internalCurrentPage + 1)">下一页</a> 
+            </li>
            </ul>
           </nav>
          </div>
@@ -118,6 +122,8 @@ export default {
       msgType: '', // 消息类型
       msgShow: false, // 是否显示消息，默认不显示
     
+      totalPage: 1,
+      internalCurrentPage: 1,
       carousel: [
         {
           title:'1',
@@ -145,9 +151,11 @@ export default {
   created() {
     const category_id = this.$route.params.category_id
     // 通过 axios 执行 GET 请求来返回活跃用户
-    this.$axios.patch(this.GLOBAL.baseURL+'/api/v1/posts/category', { category_id:category_id }).then((response) => {
+    this.$axios.patch(this.GLOBAL.baseURL+'/api/v1/posts/category', { page:1, category_id:category_id }).then((response) => {
       // 在成功的回调里，从 response.data 获取返回数据
-      this.postList = response.data
+      this.postList = response.data.data
+      this.totalPage = response.data.last_page
+      this.internalCurrentPage = response.data.current_page
     }),
     // 通过 axios 执行 GET 请求来返回活跃用户
     this.$axios.patch(this.GLOBAL.baseURL+'/api/v1/setting', { visit:1 }).then((response) => {
@@ -160,9 +168,9 @@ export default {
     '$route'(to) {
       const category_id = this.$route.params.category_id
       // 通过 axios 执行 GET 请求来返回活跃用户
-      this.$axios.patch(this.GLOBAL.baseURL+'/api/v1/posts/category', { category_id:category_id }).then((response) => {
+      this.$axios.patch(this.GLOBAL.baseURL+'/api/v1/posts/category', { page:1, category_id:category_id }).then((response) => {
         // 在成功的回调里，从 response.data 获取返回数据
-        this.postList = response.data
+        this.postList = response.data.data
       })
     }
   },
@@ -172,11 +180,13 @@ export default {
       this.msgType = type
       this.msgShow = true
     },
-    changeCarouselIndex(index) {
-      index = 1 + index,
-      alert(index)
-      this.activeCarouselIndex = index
-    },
+    changePage(page) {
+      this.internalCurrentPage = page
+      this.$axios.patch(this.GLOBAL.baseURL+'/api/v1/posts/category', { page:1, category_id:category_id }).then((response) => {
+        // 在成功的回调里，从 response.data 获取返回数据
+        this.postList = response.data.data
+      })
+    }
   },
 }
 </script>
