@@ -40,7 +40,7 @@
           </div>
           <h2 class="l-h2">最新文章</h2>
           <div v-for="(item, index) in postList" class="media">
-           <a href="#"> <img :src="`http://laravel-qingyyy.test/storage/${item.image}`" class="align-self-start mr-3" alt="..." /> </a>
+           <a href="#"> <img :src="`${baseURL}/storage/${item.image}`" class="align-self-start mr-3" alt="..." /> </a>
            <div class="media-body">
             <router-link :to="`/articles/${item.id}/content`" class="media-title hidden-xs">
               <h5 class="media-title">{{ item.title }}</h5>
@@ -159,6 +159,7 @@ export default {
       activeCarouselIndex: 0,
       postList: [],
       setting: [],
+      baseURL: this.GLOBAL.baseURL,
     }
   },
   beforeRouteEnter(to, from, next) {
