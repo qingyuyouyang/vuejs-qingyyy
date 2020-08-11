@@ -12,6 +12,7 @@ import { mockArticles } from './mock/data'
 import ls from './utils/localStorage'
 // 引入 axios 的默认值
 import axios from 'axios'
+import './api'
 
 // 将 axios 添加到 Vue.prototype 上，使其在实例内部的所有组件中可用
 Vue.prototype.$axios = axios

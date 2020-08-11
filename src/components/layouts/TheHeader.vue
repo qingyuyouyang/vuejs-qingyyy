@@ -45,7 +45,7 @@ export default {
   // 在实例创建完成后
   created() {
     // 通过 axios 执行 GET 请求来返回活跃用户
-    this.$axios.get('http://laravel-qingyyy.test/api/v1/categories').then((response) => {
+    this.$axios.get(this.GLOBAL.baseURL+'/api/v1/categories').then((response) => {
       // 在成功的回调里，从 response.data 获取返回数据
       this.navList = response.data
     })
