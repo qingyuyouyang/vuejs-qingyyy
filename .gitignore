@@ -19,6 +19,3 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-
-# global_variable
-src/api/global_variable.js
