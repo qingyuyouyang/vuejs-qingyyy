@@ -46,6 +46,7 @@
               <h5 class="media-title">{{ item.title }}</h5>
             </router-link>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.body }}</p>
+            <!-- <div class="topic-body mt-4 mb-4" v-html="item.body"></div> -->
            </div>
           </div>
           <nav aria-label="Page navigation example">
