@@ -30,4 +30,6 @@ $fa-font-path: "~font-awesome/fonts/";
 @import "~bootstrap/scss/bootstrap";
 @import "~font-awesome/scss/font-awesome";
 @import "./styles/main";
+@import '~simplemde/dist/simplemde.min.css';
+@import '~highlight.js/styles/atom-one-dark.css';
 </style>

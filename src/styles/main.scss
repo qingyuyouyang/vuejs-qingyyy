@@ -204,6 +204,12 @@ a,a:hover{
   .topic-content{
   	min-height:500px;
   }
+
+  .topic-body{
+  	img{
+  		max-width: 100%;
+  	}
+  }
 }
 
 .popover{

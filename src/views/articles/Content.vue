@@ -57,6 +57,7 @@
 import SimpleMDE from 'simplemde'
 import hljs from 'highlight.js'
 import emoji from 'node-emoji'
+window.hljs = hljs
 
 export default {
   name: 'Content',
@@ -69,28 +70,21 @@ export default {
   },
   created() {
     const articleId = this.$route.params.articleId
-    const article = this.$store.getters.getArticleById(articleId)
     // 通过 axios 执行 GET 请求来返回活跃用户
     this.$axios.get(this.GLOBAL.baseURL+'/api/v1/posts/'+articleId).then((response) => {
       // 在成功的回调里，从 response.data 获取返回数据
-      this.title = response.data.title
-      this.content = response.data.body
-      this.date = response.data.created_at
-    })
-
-    if (article) {
       let { title, content, date } = article
 
-      this.title = title
-      this.content = SimpleMDE.prototype.markdown(emoji.emojify(content, name => name))
-      this.date = date
+      this.title = response.data.title
+      this.content = SimpleMDE.prototype.markdown(emoji.emojify(response.data.body, name => name))
+      this.date = response.data.created_at
 
       this.$nextTick(() => {
         this.$el.querySelectorAll('pre code').forEach((el) => {
           hljs.highlightBlock(el)
         })
       })
-    }
+    })
   }
 }
 </script>
