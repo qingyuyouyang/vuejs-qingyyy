@@ -34,7 +34,7 @@
               1
             </div>
 
-            <div class="topic-body mt-4 mb-4" v-html="content"></div>
+            <div class="topic-body mt-4 mb-4" v-html="content" v-viewer></div>
 
 <!--             <div class="operate">
               <hr>

@@ -13,12 +13,14 @@ import ls from './utils/localStorage'
 // 引入 axios 的默认值
 import axios from 'axios'
 import './api'
+import Viewer from 'v-viewer'
+import 'viewerjs/dist/viewer.css'
 
 // 将 axios 添加到 Vue.prototype 上，使其在实例内部的所有组件中可用
 Vue.prototype.$axios = axios
 
 Vue.use(VueSweetalert2)
-
+Vue.use(Viewer)
 Vue.config.productionTip = false
 
 const AddMockData = (() => {
