@@ -68,17 +68,17 @@
            </div>
            <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <i class="card-info-icon fas fa-meteor"></i>&nbsp;
+              <i class="card-info-icon fa fa-eye" aria-hidden="true"></i>&nbsp;
               <span class="card-info-text">访问次数</span>
               <span class="card-info-number">{{ setting.visited }}</span>
             </li>
             <li class="list-group-item">
-              <i class="card-info-icon fas fa-calendar-alt"></i>&nbsp;
+              <i class="card-info-icon fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;
               <span class="card-info-text">运行天数</span>
               <span class="card-info-number">{{ setting.run_days }}</span>
             </li>
             <li class="list-group-item">
-              <i class="card-info-icon fas fa-file-alt"></i>&nbsp;
+              <i class="card-info-icon fa fa-list" aria-hidden="true"></i>&nbsp;
               <span class="card-info-text">文章数量</span>
               <span class="card-info-number">{{ setting.article_nums }}</span>
             </li>
