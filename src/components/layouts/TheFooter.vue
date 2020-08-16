@@ -2,21 +2,17 @@
   <footer class="footer">
     <div class="container">
       <div class="row footer-top">
-        <div class="col-sm-5 col-lg-5">
-          <p class="padding-top-xsm">{{ description }}</p>
-
+        <div class="col-sm-12 col-lg-12">
+          <p class="padding-top-xsm" v-html="description"></p>
           <div class="text-md">
             <a v-for="item in contacts" v-title="item.title" :href="item.link" :style="contactStyle" target="_blank">
               <i :class="`fa fa-${item.icon}`"></i>
             </a>
           </div>
-
-          <br>
-
           <span v-html="designer"></span>
         </div>
 
-        <div class="col-sm-6 col-lg-6 col-lg-offset-1">
+<!--         <div class="col-sm-6 col-lg-6 col-lg-offset-1">
           <div class="row">
             <div class="col-sm-4">
               <h4>{{ sponsor.title }}</h4>
@@ -50,7 +46,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </footer>
@@ -68,7 +64,7 @@ export default {
   },
   data() {
     return {
-      description: 'Copyright &copy; 2020 青羽悠扬 All Rights Reserved',
+      description: 'Copyright &copy; 2020 <a href="http://qingyyy.cn">青羽悠扬</a> All Rights Reserved || <a href="https://beian.miit.gov.cn" target="_blank">备案号：豫ICP备20023881号</a>' ,
       contacts: [
         {
           icon: 'envelope',
@@ -92,7 +88,7 @@ export default {
       designer: `
         <span style="font-size:0.9em">Designed by
           <span style="color: #e27575;font-size: 14px;">❤</span>
-          <a href="#" target="_blank"style="color:inherit">青羽悠扬</a>
+          <a href="http://qingyyy.cn" target="_blank"style="color:inherit">青羽悠扬</a>
         </span>
       `,
       sponsor: {
