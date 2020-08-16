@@ -30,7 +30,7 @@
               <img src="@/images/article/cat 2.jpeg" class="d-block w-100" alt="./Fimages/Article/1.jpg" />
               <div class="carousel-caption d-none d-md-block">
                <h5>{{ item.title }}</h5>
-               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+               <!-- <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
               </div>
              </div>
             </div>
@@ -63,8 +63,8 @@
           <div class="card card-one">
            <!-- <img src="./images/right-avatar.jpg" class="card-img-top" alt="..." /> -->
            <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-feather-alt"></i>&nbsp;&nbsp;青羽悠扬</h5>
-            <p class="card-text">业余的编程爱好者，找寻向往的生活。</p>
+            <h5 class="card-title"><i class="fas fa-feather-alt"></i>&nbsp;&nbsp;网站信息</h5>
+            <p class="card-text">记录生活，分享生活。</p>
            </div>
            <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -82,11 +82,11 @@
               <span class="card-info-text">文章数量</span>
               <span class="card-info-number">{{ setting.article_nums }}</span>
             </li>
-            <li class="list-group-item">
+<!--             <li class="list-group-item">
               <i class="card-info-icon fas fa-comment-dots"></i>&nbsp;
               <span class="card-info-text">评论数量</span>
               <span class="card-info-number">9</span>
-            </li>
+            </li> -->
            </ul>
     <!--        <div class="card-body">
             <a href="#" class="card-link">Card link</a>
@@ -96,13 +96,16 @@
           <div class="card card-two">
            <img src="@/images/right-avatar.jpg" class="card-img-top" alt="..." />
            <div class="card-body">
-            <h5 class="card-title">怀念，是你的笑颜</h5>
-            <p class="card-text">那些逝去的时光，那些被记忆冲散的岁月，那挂在心头的人儿啊，Are you ok? ^_^.</p>
+            <h5 class="card-title"><i class="fas fa-feather-alt"></i>&nbsp;&nbsp;青羽悠扬</h5>
+            <p class="card-text">保持好奇，求知若饥。</p>
            </div>
            <ul class="list-group list-group-flush">
-            <li class="list-group-item">昨天，已成记忆</li>
-            <li class="list-group-item">今天，正在逝去</li>
-            <li class="list-group-item">明天，美好无限！</li>
+            <li class="list-group-item">维护者 @ qingyyy.cn</li>
+            <li class="list-group-item">郑州</li>
+            <li class="list-group-item">
+              <a href="qingyyy.cn">qingyyy.cn</a>
+            </li>
+            <li class="list-group-item">5小时前</li>
            </ul>
     <!--        <div class="card-body">
             <a href="#" class="card-link">Card link</a>
