@@ -63,7 +63,7 @@
           <div class="card card-one">
            <!-- <img src="./images/right-avatar.jpg" class="card-img-top" alt="..." /> -->
            <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-feather-alt"></i>&nbsp;&nbsp;网站信息</h5>
+            <h5 class="card-title"><i class="fa fa-window-maximize" aria-hidden="true"></i>&nbsp;&nbsp;网站信息</h5>
             <p class="card-text">记录生活，分享生活。</p>
            </div>
            <ul class="list-group list-group-flush">
@@ -96,21 +96,31 @@
           <div class="card card-two">
            <img src="@/images/right-avatar.jpg" class="card-img-top" alt="..." />
            <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-feather-alt"></i>&nbsp;&nbsp;青羽悠扬</h5>
+            <h5 class="card-title"><i class="fa fa-leaf"></i>&nbsp;&nbsp;青羽悠扬</h5>
             <p class="card-text">保持好奇，求知若饥。</p>
            </div>
            <ul class="list-group list-group-flush">
-            <li class="list-group-item">维护者 @ qingyyy.cn</li>
-            <li class="list-group-item">郑州</li>
-            <li class="list-group-item">
-              <a href="qingyyy.cn">qingyyy.cn</a>
+            <li class="list-group-item ">
+              <i class="fa fa-address-book" aria-hidden="true" style="color:#a5a5a5"></i> 
+              <span class="card-info-text">维护者 @ qingyyy.cn</span>
             </li>
-            <li class="list-group-item">5小时前</li>
+            <li class="list-group-item">
+              <i class="fa fa-map-marker" aria-hidden="true" style="color:#a5a5a5"></i> 
+              <span class="card-info-text">郑州</span>
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-link" aria-hidden="true" style="color:#a5a5a5"></i>
+               <a href="qingyyy.cn">
+                <span class="card-info-text">qingyyy.cn</span>
+                </a>
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-headphones" aria-hidden="true" style="color:#a5a5a5"></i> 
+              <span class="card-info-text">
+                5小时前
+              </span>
+            </li>
            </ul>
-    <!--        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-           </div> -->
           </div>
          </div>
         </div>
@@ -141,21 +151,6 @@ export default {
         },{
           title:'3',
           img:'',
-          src:''
-        }
-      ],
-      media: [
-        {
-          title:'爱，不止在字里行间',
-          content:'那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏',
-          src:''
-        },{
-          title:'爱，不止在字里行间',
-          content:'那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏',
-          src:''
-        },{
-          title:'爱，不止在字里行间',
-          content:'那些藏匿心中很久的甜言 那些羞于表达出口的蜜语 借今天，写成三行情书 向你表达你心中的爱意 爱你这件事 从一而终 认真且执着 你的微笑 是深藏的秘密 刻在我的心底 爱，不止在字里行间 在你看不见的眉眼之间 还在有你的每个地方 你那不经意展露的笑容 令我的心宛如蒲公英的绒毛般 乘着恋爱的风，向你飞去 我怀疑 星星坠落的时候 掉进了你的眼睛里 爱你这两个字 是世界上最胆小的 它总是在你面前东躲西藏',
           src:''
         }
       ],
@@ -204,16 +199,6 @@ export default {
       this.activeCarouselIndex = index
     },
   },
-  // computed: {
-  //   // auth() {
-  //   //   return this.$store.state.auth
-  //   // },
-  //   ...mapState([
-  //     'auth',
-  //     'user',
-  //     'articles'
-  //   ])
-  // },
 }
 </script>
 

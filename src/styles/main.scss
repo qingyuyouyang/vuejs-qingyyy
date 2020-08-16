@@ -40,6 +40,20 @@ a,a:hover{
   -webkit-box-orient: vertical;
 }
 
+i{
+	font-size: 1em;
+	display: inline-block;
+    opacity: 1;
+    margin: 0 .25rem 0 0;
+    width: 1.18em;
+    height: 1em;
+    font-family: Icons;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: inherit;
+    text-align: center;
+}
+
 .navbar{
 	border:$test-border;
 	// border-top: 4px solid #00b5ad;
@@ -156,29 +170,29 @@ a,a:hover{
 .c-right{
 	margin-top: 20px;
 
-	.card-one{
+	.card-one , .card-two{
     margin-bottom:2rem;
     border-radius:5px;
     border-top: 2px solid #66CCCC;
 
-    .card-title{
-      color:$color-title;
-    }
+	    .card-title{
+	      color:$color-title;
+	    }
 
-    .card-body{
-      color:$color-content;
-    }
+	    .card-body{
+	      color:$color-content;
+	    }
 
-    .card-info-icon{
-      color:#99CCCC;
-    }
-    .card-info-text{
-      color:#99CCCC;
-    }
-    .card-info-number{
-      color:#99CCCC;
-      float: right;
-    }
+	    .card-info-icon{
+	      color:#99CCCC;
+	    }
+	    .card-info-text{
+	      color:#99CCCC;
+	    }
+	    .card-info-number{
+	      color:#99CCCC;
+	      float: right;
+	    }
 	}
 
   .card-two{
