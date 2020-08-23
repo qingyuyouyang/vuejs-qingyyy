@@ -2,7 +2,7 @@
 * @Author: faker
 * @Date:   2020-05-26 15:06:16
 * @Last Modified by:   faker
-* @Last Modified time: 2020-06-20 11:58:36
+* @Last Modified time: 2020-08-23 15:22:29
 */
 export default [
   {
@@ -15,6 +15,11 @@ export default [
     name: 'Home',
     alias: '/topics',
     component: () => import('@/views/Home')
+  },
+  {
+    path: '/category/:category_id',
+    name: 'Category',
+    component: () => import('@/views/Category')
   },
   {
     path: '*',

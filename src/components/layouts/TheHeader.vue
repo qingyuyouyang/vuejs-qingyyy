@@ -20,7 +20,7 @@
    <div id="navbarText" :class="['collapse', 'navbar-collapse', { show: showCollapsedNav }]">
     <ul class="navbar-nav mr-auto">
      <li class="nav-item" v-for="(item, index) in navList" :class="{ active: index === activeNavIndex }">
-       <a class="nav-link" href="#" @click="changeNavIndex(item.href)">{{ item.title }} <span class="sr-only">(current)</span></a> 
+       <router-link class="nav-link" :to="`/category/${ item.id }`" @click="changeNavIndex(item.href)">{{ item.name }} <span class="sr-only">(current)</span></router-link> 
      </li>
     </ul>
     <span class="navbar-text"> 回不去的旧日时光 </span>
