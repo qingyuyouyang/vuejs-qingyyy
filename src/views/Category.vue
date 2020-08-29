@@ -140,19 +140,7 @@ export default {
       baseURL: this.GLOBAL.baseURL,
     }
   },
-  beforeRouteEnter(to, from, next) {
-    const fromName = from.name
 
-    next(vm => {
-      if (vm.$store.state.auth) {
-        switch (fromName) {
-          case 'Register':
-            vm.showMsg('注册成功')
-            break
-        }
-      }
-    })
-  },
   // 在实例创建完成后
   created() {
     const category_id = this.$route.params.category_id
@@ -166,6 +154,17 @@ export default {
       // 在成功的回调里，从 response.data 获取返回数据
       this.setting = response.data
     })
+  },
+  watch: {
+    // 监听 '$route'，在查询参数变化后，设置相关数据
+    '$route'(to) {
+      const category_id = this.$route.params.category_id
+      // 通过 axios 执行 GET 请求来返回活跃用户
+      this.$axios.patch(this.GLOBAL.baseURL+'/api/v1/posts/category', { category_id:category_id }).then((response) => {
+        // 在成功的回调里，从 response.data 获取返回数据
+        this.postList = response.data
+      })
+    }
   },
   methods: {
     showMsg(msg, type = 'success') {
