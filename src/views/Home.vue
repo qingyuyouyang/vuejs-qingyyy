@@ -40,7 +40,7 @@
           </div>
           <h2 class="l-h2">最新文章</h2>
           <div v-for="(item, index) in postList" class="media">
-           <a href="#"> <img :src="`${baseURL}/storage/${item.image}`" class="align-self-start mr-3" alt="..." /> </a>
+           <router-link :to="`/articles/${item.id}/content`" class="media-title hidden-xs"> <img :src="`${baseURL}/storage/${item.image}`" class="align-self-start mr-3" alt="..." width="155px" /> </router-link>
            <div class="media-body">
             <router-link :to="`/articles/${item.id}/content`" class="media-title hidden-xs">
               <h5 class="media-title">{{ item.title }}</h5>
