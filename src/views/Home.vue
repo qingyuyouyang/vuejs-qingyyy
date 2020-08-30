@@ -50,12 +50,16 @@
            </div>
           </div>
           <nav aria-label="Page navigation example">
-           <ul class="pagination justify-content-center">
-            <li class="page-item disabled"> <a class="page-link" href="#" tabindex="-1" aria-disabled="true">上一页</a> </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"> <a class="page-link" href="#">下一页</a> </li>
+           <ul v-if="totalPage > 1" class="pagination justify-content-center">
+            <li :class="{ disabled: internalCurrentPage === 1 }" class="page-item"> 
+              <a class="page-link" href="javascript:;" @click="changePage(internalCurrentPage - 1)">上一页</a> 
+            </li>
+            <li v-for="n in totalPage" :class="{ active: internalCurrentPage === n }" class="page-item">
+              <a class="page-link" href="javascript:;" @click="changePage(n)">{{ n }}</a>
+            </li>
+            <li :class="{ disabled: internalCurrentPage === totalPage }" class="page-item"> 
+              <a class="page-link" href="javascript:;" @click="changePage(internalCurrentPage + 1)">下一页</a> 
+            </li>
            </ul>
           </nav>
          </div>
@@ -159,6 +163,9 @@ export default {
       postList: [],
       setting: [],
       baseURL: this.GLOBAL.baseURL,
+
+      totalPage: 1,
+      internalCurrentPage: 1,
     }
   },
   beforeRouteEnter(to, from, next) {
@@ -177,9 +184,11 @@ export default {
   // 在实例创建完成后
   created() {
     // 通过 axios 执行 GET 请求来返回活跃用户
-    this.$axios.get(this.GLOBAL.baseURL+'/api/v1/posts').then((response) => {
+    this.$axios.patch(this.GLOBAL.baseURL+'/api/v1/posts', { page:1 }).then((response) => {
       // 在成功的回调里，从 response.data 获取返回数据
-      this.postList = response.data
+      this.postList = response.data.data
+      this.totalPage = response.data.last_page
+      this.internalCurrentPage = response.data.current_page
     }),
     // 通过 axios 执行 GET 请求来返回活跃用户
     this.$axios.patch(this.GLOBAL.baseURL+'/api/v1/setting', { visit:1 }).then((response) => {
@@ -193,11 +202,13 @@ export default {
       this.msgType = type
       this.msgShow = true
     },
-    changeCarouselIndex(index) {
-      index = 1 + index,
-      alert(index)
-      this.activeCarouselIndex = index
-    },
+    changePage(page) {
+      this.internalCurrentPage = page
+      this.$axios.patch(this.GLOBAL.baseURL+'/api/v1/posts', { page:page }).then((response) => {
+        // 在成功的回调里，从 response.data 获取返回数据
+        this.postList = response.data.data
+      })
+    }
   },
 }
 </script>
