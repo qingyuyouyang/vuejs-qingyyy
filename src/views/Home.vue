@@ -45,7 +45,20 @@
             <router-link :to="`/articles/${item.id}/content`" class="media-title hidden-xs">
               <h5 class="media-title">{{ item.title }}</h5>
             </router-link>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.body }}</p>
+            <div class="media-info">
+              <i class="card-info-icon fa fa-user" aria-hidden="true"></i>
+              <span>作者 青羽悠扬 | </span>
+              <i class="card-info-icon fa fa-clock-o" aria-hidden="true"></i>
+              <span>发表于 {{ item.created_at | moment('from') }} | </span>
+              <i class="card-info-icon fa fa-eye" aria-hidden="true"></i>
+              <span>分类 {{ item.category.name }} | </span>
+              <i class="card-info-icon fa fa-eye" aria-hidden="true"></i>
+              <span>阅读量 1| </span>
+              <i class="card-info-icon fa fa-eye" aria-hidden="true"></i>
+              <span>评论数 0</span>
+
+            </div>
+            <p v-html='item.excerpt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             <!-- <div class="topic-body mt-4 mb-4" v-html="item.body"></div> -->
            </div>
           </div>

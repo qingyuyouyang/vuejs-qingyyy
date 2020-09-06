@@ -138,15 +138,21 @@ i{
 		border-bottom: 1px solid #f2f2f2;
 
 		.media-title{
-			font-weight: bold;
-      color:$color-content;
+			font-family: '微软雅黑';
+			font-weight: 400;
+      		color:$color-content;
+		}
+
+		.media-info{
+			font-size: 14px;
+			color:#999;
 		}
 
 		.media-body{
 			@include text-overflow(3);
 			padding-left:1rem;
 			background: #fff;
-      color:$color-content;
+      		color:$color-content;
 
 			p{
 				margin-bottom: 0px;
