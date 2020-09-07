@@ -1,7 +1,7 @@
 <template>
   <div>
     <Message :show.sync="msgShow" :type="msgType" :msg="msg"/>
-    <div class="jumbotron" :style="[{'background':`url(${setting.jumbotron}) center center no-repeat`},{'background-size': 'contain'}]">
+    <div class="jumbotron" :style="[{'background':`url(${setting.jumbotron}) center center / contain no-repeat`}]">
      <h2 class="l-h2"></h2>
      <!-- <hr class="my-4"> -->
      <!-- <p class="lead">爱你这件事,从一而终,认真且执着</p> -->
