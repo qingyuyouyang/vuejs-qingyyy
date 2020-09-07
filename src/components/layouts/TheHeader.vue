@@ -11,7 +11,7 @@
   </div> -->
   <nav class="navbar-default navbar fixed-top navbar-expand-lg">
    <router-link to="/" class="navbar-brand">
-      <img :src="logo.src" :alt="logo.title">&nbsp;&nbsp;{{ logo.title }}
+      <img :src="website.logo" :alt="website.title">&nbsp;&nbsp;{{ website.title }}
    </router-link>
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" @click="toggleNav">
       <span class="navbar-toggler-icon"></span> 
@@ -33,10 +33,7 @@ export default {
   name: 'TheHeader',
   data() {
     return {
-      logo: {
-        src: `${this.uploadsUrl}`,
-        title: '青羽悠扬'
-      },
+      website: [],
       navList: [],
       activeNavIndex: 0,
       showCollapsedNav: false
@@ -44,10 +41,15 @@ export default {
   },
   // 在实例创建完成后
   created() {
-    // 通过 axios 执行 GET 请求来返回活跃用户
+    // 通过 axios 执行 GET 请求来返回分类
     this.$axios.get(this.GLOBAL.baseURL+'/api/v1/categories').then((response) => {
       // 在成功的回调里，从 response.data 获取返回数据
       this.navList = response.data
+    }),
+    // 通过 axios 执行 GET 请求来返回设置信息
+    this.$axios.get(this.GLOBAL.baseURL+'/api/v1/setting/website').then((response) => {
+      // 在成功的回调里，从 response.data 获取返回数据
+      this.website = response.data
     })
   },
   beforeCreate() {

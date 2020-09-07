@@ -1,15 +1,14 @@
 <template>
   <div>
     <Message :show.sync="msgShow" :type="msgType" :msg="msg"/>
-
-    <div class="jumbotron">
+    <div class="jumbotron" :style="[{'background':`url(${setting.jumbotron}) center center no-repeat`},{'background-size': 'contain'}]">
      <h2 class="l-h2"></h2>
      <!-- <hr class="my-4"> -->
      <!-- <p class="lead">爱你这件事,从一而终,认真且执着</p> -->
      <br />
      <!-- <p>你就像春天的精灵,路过人间时,弥漫芬芳与光亮.</p> -->
      <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
-     <img src="@/images/avatar.jpg" alt="..." class="img-thumbnail" />
+     <img :src="setting.avatar" alt="..." class="img-thumbnail" />
     </div>
     <div class="motto">
      <span>❤成功源于不懈的努力。</span>
@@ -50,11 +49,11 @@
               <span>作者 青羽悠扬 | </span>
               <i class="card-info-icon fa fa-clock-o" aria-hidden="true"></i>
               <span>发表于 {{ item.created_at | moment('from') }} | </span>
-              <i class="card-info-icon fa fa-eye" aria-hidden="true"></i>
+              <i class="card-info-icon fa fa-bars" aria-hidden="true"></i>
               <span>分类 {{ item.category.name }} | </span>
               <i class="card-info-icon fa fa-eye" aria-hidden="true"></i>
               <span>阅读量 1| </span>
-              <i class="card-info-icon fa fa-eye" aria-hidden="true"></i>
+              <i class="card-info-icon fa fa-commenting" aria-hidden="true"></i>
               <span>评论数 0</span>
 
             </div>
