@@ -58,7 +58,6 @@
 
             </div>
             <p v-html='item.excerpt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <!-- <div class="topic-body mt-4 mb-4" v-html="item.body"></div> -->
            </div>
           </div>
           <nav aria-label="Page navigation example">
@@ -75,80 +74,21 @@
            </ul>
           </nav>
          </div>
-         <div class="c-right col-3">
-          <div class="card card-one">
-           <!-- <img src="./images/right-avatar.jpg" class="card-img-top" alt="..." /> -->
-           <div class="card-body">
-            <h5 class="card-title"><i class="fa fa-window-maximize" aria-hidden="true"></i>&nbsp;&nbsp;网站信息</h5>
-            <p class="card-text">记录生活，分享生活。</p>
-           </div>
-           <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <i class="card-info-icon fa fa-eye" aria-hidden="true"></i>&nbsp;
-              <span class="card-info-text">访问次数</span>
-              <span class="card-info-number">{{ setting.visited }}</span>
-            </li>
-            <li class="list-group-item">
-              <i class="card-info-icon fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;
-              <span class="card-info-text">运行天数</span>
-              <span class="card-info-number">{{ setting.run_days }}</span>
-            </li>
-            <li class="list-group-item">
-              <i class="card-info-icon fa fa-list" aria-hidden="true"></i>&nbsp;
-              <span class="card-info-text">文章数量</span>
-              <span class="card-info-number">{{ setting.article_nums }}</span>
-            </li>
-<!--             <li class="list-group-item">
-              <i class="card-info-icon fas fa-comment-dots"></i>&nbsp;
-              <span class="card-info-text">评论数量</span>
-              <span class="card-info-number">9</span>
-            </li> -->
-           </ul>
-    <!--        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-           </div> -->
-          </div>
-          <div class="card card-two">
-           <img src="@/images/right-avatar.jpg" class="card-img-top" alt="..." />
-           <div class="card-body">
-            <h5 class="card-title"><i class="fa fa-leaf"></i>&nbsp;&nbsp;青羽悠扬</h5>
-            <p class="card-text">保持好奇，求知若饥。</p>
-           </div>
-           <ul class="list-group list-group-flush">
-            <li class="list-group-item ">
-              <i class="fa fa-address-book" aria-hidden="true" style="color:#a5a5a5"></i> 
-              <span class="card-info-text">维护者 @ qingyyy.cn</span>
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-map-marker" aria-hidden="true" style="color:#a5a5a5"></i> 
-              <span class="card-info-text">郑州</span>
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-link" aria-hidden="true" style="color:#a5a5a5"></i>
-               <a href="qingyyy.cn">
-                <span class="card-info-text">qingyyy.cn</span>
-                </a>
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-headphones" aria-hidden="true" style="color:#a5a5a5"></i> 
-              <span class="card-info-text">
-                5小时前
-              </span>
-            </li>
-           </ul>
-          </div>
-         </div>
+         <TheSidebar/>
         </div>
        </div>
   </div>
 </template>
 
 <script>
+import TheSidebar from '@/components/layouts/TheSidebar'
 import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
+  components: {
+    TheSidebar
+  },
   data() {
     return {
       msg: '', // 消息
@@ -202,9 +142,7 @@ export default {
       this.totalPage = response.data.last_page
       this.internalCurrentPage = response.data.current_page
     }),
-    // 通过 axios 执行 GET 请求来返回活跃用户
     this.$axios.patch(this.GLOBAL.baseURL+'/api/v1/setting', { visit:1 }).then((response) => {
-      // 在成功的回调里，从 response.data 获取返回数据
       this.setting = response.data
     })
   },
