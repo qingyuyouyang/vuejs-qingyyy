@@ -19,12 +19,25 @@
          <div class="c-left col-9">
           <h2 class="l-h2">最新文章</h2>
           <div v-for="(item, index) in postList" class="media">
-           <router-link :to="`/articles/${item.id}/content`" class="media-title hidden-xs"> <img :src="`${baseURL}/storage/${item.image}`" class="align-self-start mr-3 width="155px"" alt="..." /> </router-link>
+           <router-link :to="`/articles/${item.id}/content`" class="media-title hidden-xs">  <img :src="`${baseURL}/storage/${item.image}`" class="align-self-start mr-3" alt="..." width="155px" /> </router-link>
            <div class="media-body">
             <router-link :to="`/articles/${item.id}/content`" class="media-title hidden-xs">
               <h5 class="media-title">{{ item.title }}</h5>
             </router-link>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.body }}</p>
+            <div class="media-info">
+              <i class="card-info-icon fa fa-user" aria-hidden="true"></i>
+              <span>作者 青羽悠扬 | </span>
+              <i class="card-info-icon fa fa-clock-o" aria-hidden="true"></i>
+              <span>发表于 {{ item.created_at | moment('from') }} | </span>
+              <i class="card-info-icon fa fa-bars" aria-hidden="true"></i>
+              <span>分类 {{ item.category.name }} | </span>
+              <i class="card-info-icon fa fa-eye" aria-hidden="true"></i>
+              <span>阅读量 1| </span>
+              <i class="card-info-icon fa fa-commenting" aria-hidden="true"></i>
+              <span>评论数 0</span>
+
+            </div>
+            <p v-html='item.excerpt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             <!-- <div class="topic-body mt-4 mb-4" v-html="item.body"></div> -->
            </div>
           </div>
