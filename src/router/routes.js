@@ -2,7 +2,7 @@
 * @Author: faker
 * @Date:   2020-05-26 15:06:16
 * @Last Modified by:   faker
-* @Last Modified time: 2020-08-23 15:22:29
+* @Last Modified time: 2021-03-13 14:39:12
 */
 export default [
   {
@@ -36,4 +36,9 @@ export default [
     name: 'Content',
     component: () => import('@/views/articles/Content.vue')
   },
+  {
+    path: '/fuck',
+    name: 'fuck',
+    component: () => import('@/views/fuck/Fuck.vue')
+  }
 ]

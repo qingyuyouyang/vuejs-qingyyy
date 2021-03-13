@@ -32,7 +32,7 @@
             </h1>
 
             <div class="article-meta text-center text-secondary">
-              <abbr>{{ created_at | moment('from') }}发布</abbr>
+              <abbr>{{ created_at | moment('from') }}{{fuck_day}}发布</abbr>
               ⋅
               <i class="fa fa-clock-o"></i>
               <abbr>{{ updated_at | moment('from') }}更新</abbr>
