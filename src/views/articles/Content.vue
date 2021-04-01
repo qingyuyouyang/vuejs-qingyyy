@@ -13,13 +13,13 @@
             <h4 class="card-title" style="text-align: center">
               {{ category }}
             </h4>
-            <div class="media">
+<!--             <div class="media">
               <div align="center">
                 <a href="">
                   <img class="thumbnail img-fluid" src="" width="300px" height="300px">
                 </a>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

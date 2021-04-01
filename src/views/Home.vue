@@ -16,7 +16,7 @@
        <div class="container">
         <div class="row justify-content-md-center">
          <div class="c-left col-9">
-          <div class="the-carousel">
+<!--           <div class="the-carousel">
            <h2 class="l-h2">推荐文章</h2>
            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -29,15 +29,15 @@
               <img src="@/images/article/cat 2.jpeg" class="d-block w-100" alt="./Fimages/Article/1.jpg" />
               <div class="carousel-caption d-none d-md-block">
                <h5>{{ item.title }}</h5>
-               <!-- <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
+               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
               </div>
              </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
             <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
            </div>
-          </div>
-          <h2 class="l-h2">最新文章</h2>
+          </div> -->
+          <h2 class="l-h2">发表过的</h2>
           <div v-for="(item, index) in postList" class="media">
            <router-link :to="`/articles/${item.id}/content`" class="media-title hidden-xs"> <img :src="`${baseURL}/storage/${item.image}`" class="align-self-start mr-3" alt="..." width="155px" /> </router-link>
            <div class="media-body">

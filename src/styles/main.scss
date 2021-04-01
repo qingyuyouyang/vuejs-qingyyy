@@ -20,7 +20,7 @@ html{
 }
 
 body {
-  font-family: $font-body;
+  // font-family: $font-body;
   background: #f0f2f5;
 }
 
@@ -92,7 +92,7 @@ i{
 	height:3rem;
 	text-align: center;
 	background: #fff;
-  color:#f4645f;
+  	color:#f4645f;
 
   span{
     font-family: $font-motto;
@@ -138,13 +138,13 @@ i{
 		border-bottom: 1px solid #f2f2f2;
 
 		.media-title{
-			font-family: '微软雅黑';
+			// font-family: '微软雅黑';
 			font-weight: 400;
       		color:$color-content;
 		}
 
 		.media-info{
-			font-size: 14px;
+			font-size: 8px;
 			color:#999;
 		}
 
