@@ -149,7 +149,8 @@ i{
 		}
 
 		.media-body{
-			@include text-overflow(3);
+			@include text-overflow(4);
+			font-size: 14px;
 			padding-left:1rem;
 			background: #fff;
       		color:$color-content;
@@ -205,6 +206,14 @@ i{
 
     border-radius:5px;
   }
+}
+
+// 文章样式
+.card-body{
+	pre{
+		margin: 1.25rem -1.25rem;
+	    border-radius: 0;
+	}
 }
 
 .footer{
